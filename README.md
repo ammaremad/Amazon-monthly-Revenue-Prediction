@@ -1,34 +1,81 @@
-# Project Summary: Amazon Monthly Revenue Prediction
+# Amazon Monthly Revenue Prediction
 
-The project focuses on predicting Amazon's monthly revenue using a dataset containing 23,084 entries and 35 columns. The primary objective is to develop a machine learning model that accurately estimates monthly revenue based on various product features.
+## Overview
+This project aims to predict the monthly revenue of products listed on Amazon using a dataset containing various product features. The analysis employs several machine learning models to identify the most accurate method for revenue estimation.
 
-#### 1. **Data Understanding and Preparation**
-- **Data Import**: The dataset was loaded using Pandas, and the structure was examined using `info()` and `head()` functions.
-- **Target Label**: The target variable identified is `monthly_Revenue_Estimate`.
-- **Data Cleaning**: Missing values were addressed by filling or dropping columns with high percentages of nulls. The `imageUrl` column was dropped as it did not contribute to the target variable. Categorical variables were converted to a categorical data type for better handling, and label encoding was applied to retain original text for visualization.
+## Table of Contents
+- [Dataset](#dataset)
+- [Technologies Used](#technologies-used)
+- [Data Understanding](#data-understanding)
+- [Data Cleaning](#data-cleaning)
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+- [Feature Engineering](#feature-engineering)
+- [Modeling](#modeling)
+- [Results](#results)
+- [Conclusion](#conclusion)
 
-#### 2. **Exploratory Data Analysis (EDA)**
-- **Statistical Overview**: Descriptive statistics were generated using the `describe()` function to understand the data distribution.
-- **Correlation Analysis**: A correlation matrix was computed to evaluate relationships between features and the target variable. Features with weak or negative correlations were identified for potential removal.
-- **Outlier Detection**: Boxplots were used to visualize outliers, which were handled using the interquartile range (IQR) method to replace extreme values with calculated fences.
+## Dataset
+The dataset consists of 23,084 entries and 35 columns, including features such as:
+- `brandId`: Unique identifier for products
+- `subcategoryId`: Unique identifier for each subcategory
+- `monthlyRevenueEstimate`: Target variable for revenue prediction
+- `monthlyUnitsSold`: Number of units sold per month
+- `reviewCount`: Total number of reviews a product has received
 
-#### 3. **Data Visualization**
-- Various visualizations were created, including histograms, boxplots, scatter plots, and heatmaps, to identify patterns and trends in the data. A logarithmic transformation was applied to the `monthly_Revenue_Estimate` to improve its distribution.
+## Technologies Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Plotly
+- Scikit-learn
+- XGBoost
+- Imbalanced-learn
 
-#### 4. **Feature Engineering**
-- Features were scaled using MinMaxScaler, and boolean columns (`is_Variation` and `out_Of_Stock_Now`) were converted to integers for better handling.
+## Data Understanding
+The data was imported and examined for its structure and types. The target label for prediction was identified as `monthlyRevenueEstimate`. The dataset contained various features related to product performance, sales, and reviews.
 
-#### 5. **Modeling**
-- The dataset was split into training and testing sets. Several regression models were evaluated:
-  - **Linear Regression**: Achieved an R-squared value of 0.42, indicating low accuracy.
-  - **XGBoost Regression**: Achieved an R-squared value of 0.98, demonstrating high accuracy.
-  - **Random Forest Regression**: Achieved the highest accuracy with an R-squared value of 0.99.
-  - **Decision Tree Regression**: Also performed well with an R-squared value of 0.98.
+## Data Cleaning
+Missing values were handled by:
+- Dropping columns with a high percentage of nulls.
+- Filling missing values in columns with a small percentage of nulls using appropriate methods (mean, mode).
+- Converting categorical variables to a categorical data type for better handling.
 
-#### 6. **Model Evaluation**
-- Each model's performance was assessed using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared values. The Random Forest model was selected as the best option for predicting monthly revenue due to its superior performance.
+## Exploratory Data Analysis (EDA)
+EDA was conducted to visualize data distributions and relationships:
+- Histograms and boxplots were used to identify distributions and outliers.
+- A correlation matrix was created to evaluate relationships between features and the target variable.
 
-#### 7. **Conclusion**
-- The project successfully developed a predictive model for Amazon's monthly revenue, with Random Forest Regression being the most effective. The analysis highlighted the importance of data cleaning, feature engineering, and model selection in achieving accurate predictions.
+## Feature Engineering
+- Features were scaled using MinMaxScaler.
+- Boolean columns (`isVariation` and `outOfStockNow`) were converted to integers for better handling.
+- Label encoding was applied to categorical variables to retain original text for visualization.
 
-This comprehensive approach ensures that the model is robust and reliable for estimating monthly revenue, providing valuable insights for stakeholders.
+## Modeling
+The dataset was split into training and testing sets. Various regression models were evaluated:
+1. **Linear Regression**: Achieved an R-squared value of 0.42.
+2. **XGBoost Regression**: Achieved an R-squared value of 0.98.
+3. **Random Forest Regression**: Achieved the highest accuracy with an R-squared value of 0.99.
+4. **Decision Tree Regression**: Achieved an R-squared value of 0.98.
+
+## Results
+The Random Forest model was selected as the best option for predicting monthly revenue due to its superior performance. The model comparison showed:
+- Random Forest Regression: 99% accuracy
+- XGBoost Regression: 98% accuracy
+- Linear Regression: 42% accuracy
+
+## Conclusion
+The project successfully developed a predictive model for Amazon's monthly revenue, with Random Forest Regression being the most effective. The analysis highlighted the importance of data cleaning, feature engineering, and model selection in achieving accurate predictions.
+
+## How to Run the Project
+1. Clone the repository.
+2. Install the required libraries using `pip install -r requirements.txt`.
+3. Run the Jupyter Notebook `Amazon_Monthly_Revenue_Prediction.ipynb` to execute the analysis and modeling.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+---
+
+Feel free to reach out for any questions or contributions!
