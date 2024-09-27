@@ -21,6 +21,7 @@ The dataset consists of 23,084 entries and 35 columns, including features such a
 - `monthlyRevenueEstimate`: Target variable for revenue prediction
 - `monthlyUnitsSold`: Number of units sold per month
 - `reviewCount`: Total number of reviews a product has received
+- dataset source: https://www.kaggle.com/datasets/regulad/amazon
 
 ## Technologies Used
 - Python
