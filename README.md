@@ -73,9 +73,3 @@ The project successfully developed a predictive model for Amazon's monthly reven
 2. Install the required libraries using `pip install -r requirements.txt`.
 3. Run the Jupyter Notebook `Amazon_Monthly_Revenue_Prediction.ipynb` to execute the analysis and modeling.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
----
-
-Feel free to reach out for any questions or contributions!
